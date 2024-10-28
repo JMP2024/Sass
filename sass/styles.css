@@ -1,0 +1,127 @@
+.main h1 {
+  font-family: "Arial Black", sans-serif;
+}
+
+.navigation {
+  background-color: #b4d0e7;
+  color: #4a4a4a;
+  padding: 1.5rem;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+.navigation ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  padding: 0;
+  margin: 0;
+}
+.navigation a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+.navigation a:hover {
+  color: white;
+}
+.navigation .menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.navigation .menu-toggle:hover {
+  color: white;
+}
+.navigation .nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+@media (max-width: 768px) {
+  .navigation .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #b4d0e7;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+}
+.navigation .nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+.navigation .nav-links a:hover {
+  color: white;
+}
+@media (max-width: 768px) {
+  .navigation .menu-toggle {
+    display: block;
+  }
+}
+
+.footer {
+  background-image: url("../IMG/rayos.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #4a4a4a;
+  font-family: "Arial Black", sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  padding: 2rem 1rem;
+  border-top: 1px solid white;
+  transition: background-color 0.3s ease;
+}
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer a:hover {
+  color: white;
+}
+.footer .footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.footer .footer-column {
+  flex: 1 1 20%;
+  min-width: 200px;
+}
+.footer .footer-column h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #cccccc;
+}
+.footer .footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer .footer-column li {
+  margin: 0.5rem 0;
+}
+
+@media (max-width: 1024px) {
+  .footer-column {
+    flex: 1 1 45%;
+  }
+}
+@media (max-width: 768px) {
+  .footer-column {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+}/*# sourceMappingURL=styles.css.map */

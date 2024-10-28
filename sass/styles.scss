@@ -1,0 +1,119 @@
+@use 'variables' as *;
+@use 'mixins' as mixins;
+
+.main{
+  h1 {
+    font-family: $font-family;
+  }
+}
+
+
+.navigation {
+  @include mixins.navigation($bg-color: $primary-color, $padding: 1.5rem);
+
+  // Botón para el menú en dispositivos móviles
+  .menu-toggle {
+    display: none; 
+    background: none;
+    border: none;
+    color: $accent-color;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: lighten($accent-color, 20%);
+    }
+  }
+
+  
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+
+    // Desplegable en pantallas pequeñas
+    @include mixins.respond-to(medium) {
+      display: none;
+      flex-direction: column;
+      background-color: $primary-color;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      padding: 1rem 0;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    a {
+      color: $accent-color;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: lighten($accent-color, 20%);
+      }
+    }
+  }
+
+  // Mostrar el botón de menú en pantallas pequeñas
+  @include mixins.respond-to(medium) {
+    .menu-toggle {
+      display: block;
+    }
+  }
+}
+
+// styles.scss
+.footer {
+  @include mixins.footer(
+    $bg-color: $secondary-color, 
+    $font-size: 1rem, 
+    $font-family: $font-family, 
+    $bg-img: $bg-img 
+  );
+
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-column {
+    flex: 1 1 20%;
+    min-width: 200px;
+
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: darken($accent-color, 20%);
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      margin: 0.5rem 0;
+    }
+  }
+}
+
+
+  // Ajustes para pantallas medianas
+  @include mixins.respond-to(large) {
+    .footer-column {
+      flex: 1 1 45%;
+    }
+  }
+
+  // Ajustes para pantallas pequeñas
+  @include mixins.respond-to(medium) {
+    .footer-column {
+      flex: 1 1 100%;
+      text-align: center;
+    }
+  }

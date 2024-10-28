@@ -1,0 +1,66 @@
+@use 'variables' as *;
+
+// Mixin de navegación
+@mixin navigation($bg-color: $secondary-color, $padding: 1.5rem) {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: $padding;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    padding: 0;
+    margin: 0;
+  }
+
+  a {
+    color: $accent-color;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: lighten($accent-color, 20%);
+    }
+  }
+}
+
+// Mixin para breakpoints
+@mixin respond-to($size) {
+  @if $size == small {
+    @media (max-width: $small-screen) { @content; }
+  } @else if $size == medium {
+    @media (max-width: $medium-screen) { @content; }
+  } @else if $size == large {
+    @media (max-width: $large-screen) { @content; }
+  }
+}
+
+// Mixin para el footer
+@mixin footer($bg-color, $font-size, $font-family, $bg-img) {
+  background-image: $bg-img;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $text-color;
+  font-family: $font-family;
+  font-size: $font-size;
+  text-align: center;
+  padding: 2rem 1rem;
+  border-top: 1px solid lighten($accent-color, 30%);
+  transition: background-color 0.3s ease;
+
+
+  a {
+    color: $accent-color;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: lighten($accent-color, 20%);
+    }
+  }
+}
